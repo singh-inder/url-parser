@@ -13,7 +13,7 @@ A simple command-line tool written in Go to extract specific components from a g
   - Path
   - Fragment
   - Scheme (protocol)
-  - Registered domain (`domain.tld`)
+  - Registered domain from a subdomain (`domain.tld`)
   - Query parameter values
 
 ## Installation
@@ -22,22 +22,22 @@ A simple command-line tool written in Go to extract specific components from a g
 
 ### wget
 
-Use wget to download, gzipped pre-compiled binaries:
+Use wget to download pre-compiled binaries:
 
-For instance, VERSION=v1.0.0 and BINARY=url-parser_linux_amd64
+For instance, VERSION=v1.0.0 and BINARY=url-parser-linux-amd64
 
 #### Plain binary
 
 ```bash
-wget https://github.com/singh-inder/url-parser/releases/download/${VERSION}/${BINARY} -O /usr/bin/yq &&\
-    chmod +x /usr/bin/yq
+wget https://github.com/singh-inder/url-parser/releases/download/${VERSION}/${BINARY} -O /usr/bin/url-parser &&\
+    chmod +x /usr/bin/url-parser
 ```
 
 #### Latest version
 
 ```bash
-wget https://github.com/singh-inder/url-parser/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
-    chmod +x /usr/bin/yq
+wget https://github.com/singh-inder/url-parser/releases/latest/download/url-parser-linux-amd64 -O /usr/bin/url-parser &&\
+    chmod +x /usr/bin/url-parser
 ```
 
 ## Usage
@@ -58,7 +58,7 @@ url-parser --url <URL> --get <component>
   - `path`: URL path (e.g., `/path/to/resource`)
   - `fragment`: Fragment (e.g., `section1`)
   - `scheme`: URL scheme (e.g., `https`)
-  - `registeredDomain`: Registered domain (e.g., `example.com`)
+  - `registeredDomain`: Registered domain from a subdomain (e.g., `example.com`)
   - `query.<paramName>`: Value of a specific query parameter (e.g., `query.user` extracts the value of the `user` parameter).
 
 ### Examples
@@ -96,6 +96,13 @@ url-parser --url "https://example.com" --get scheme
 ```bash
 url-parser --url "https://sub.example.com" --get host
 # Output: sub.example.com
+```
+
+#### Extract the registered domain from a subdomain:
+
+```bash
+url-parser --url "https://sub.example.com" --get registeredDomain
+# Output: example.com
 ```
 
 ## Contributing
