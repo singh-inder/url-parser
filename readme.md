@@ -50,7 +50,8 @@ url-parser --url <URL> --get <component>
 
 - `--url`: The URL to parse. Example: `https://example.com`.
 - `--get`: The component to extract. Options:
-  - `host`: Full host (e.g., `subdomain.example.com`)
+  - `host`: url host (port number if present is included) (e.g., `subdomain.example.com:1234`)
+  - `hostWithoutPort`: url host (port number removed) (eg., `subdomain.example.com`)
   - `domain`: Domain name (e.g., `example`)
   - `subdomain`: Subdomain (e.g., `sub`)
   - `tld`: Top-level domain (e.g., `com`)

@@ -12,11 +12,11 @@ before:
   hooks:
     - go mod tidy
 
-# https://goreleaser.com/customization/builds/
+# https://goreleaser.com/customization/builds/ https://goreleaser.com/customization/templates/
 builds:
   - binary: url-parser-{{ .Os }}-{{ .Arch }}
     ldflags:
-      - -s -w
+      - -s -w -X main.build={{.Tag}}
     env:
       - CGO_ENABLED=0
 
