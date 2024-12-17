@@ -29,15 +29,15 @@ For instance, VERSION=v1.0.0 and BINARY=url-parser-linux-amd64
 #### Plain binary
 
 ```bash
-wget https://github.com/singh-inder/url-parser/releases/download/${VERSION}/${BINARY} -O /usr/bin/url-parser &&\
-    chmod +x /usr/bin/url-parser
+wget https://github.com/singh-inder/url-parser/releases/download/${VERSION}/${BINARY} -O /usr/local/bin/url-parser &&\
+    chmod +x /usr/local/bin/url-parser
 ```
 
 #### Latest version
 
 ```bash
-wget https://github.com/singh-inder/url-parser/releases/latest/download/url-parser-linux-amd64 -O /usr/bin/url-parser &&\
-    chmod +x /usr/bin/url-parser
+wget https://github.com/singh-inder/url-parser/releases/latest/download/url-parser-linux-amd64 -O /usr/local/bin/url-parser &&\
+    chmod +x /usr/local/bin/url-parser
 ```
 
 ## Usage
